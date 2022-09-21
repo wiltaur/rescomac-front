@@ -1,3 +1,29 @@
 <div class="container-fluid text-center">
-    <h1>Vista de Parámetros</h1>
+    <div class="row">
+        <div class="offset-10 col-md-2 mt-2"> <a [routerLink]="['/propiedades/create']">Crear Parámetro</a> </div>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Valor</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let propiedad of properties">
+                    <td>{{propiedad.nombre}}</td>
+                    <td>{{propiedad.apellido}}</td>
+                    <td><button type="button" id="update" class="btn btn-success">Actualizar</button></td>
+                    <td><button type="button" id="delete" class="btn btn-danger">Eliminar</button></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
 </div>
