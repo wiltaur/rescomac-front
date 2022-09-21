@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <form [formGroup]="propiedadForm" autocomplete="off" novalidate (ngSubmit)="createPropiedad(propiedadForm.value)">
+      <div class="card card-body bg-light mb-2 mt-2">
+        <div class="row mb-3">
+          <label for="nombre" class="col-form-label col-md-2">Nombre del propietario: </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="nombre" id="nombre" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('nombre') 
+            && hasError('nombre', 'required')">Nombre is required</em>
+          </div>
+        </div>
+        <div class="row mb-3">
+            <label for="apellido" class="col-form-label col-md-2">Apellido del propietario: </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="apellido" id="apellido" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('apellido') 
+              && hasError('apellido', 'required')">Apellido is required</em>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="identificacion" class="col-form-label col-md-2">Identificación del propietario: </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="identificacion" id="identificacion" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('identificacion') 
+              && hasError('identificacion', 'required')">Identificación is required</em>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="celular" class="col-form-label col-md-2">Celular del propietario: </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="celular" id="celular" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('celular') 
+              && hasError('celular', 'required')">Celular is required</em>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="correo" class="col-form-label col-md-2">Correo del propietario: </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="correo" id="correo" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('correo') 
+              && hasError('correo', 'required')">Correo is required</em>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="torre" class="col-form-label col-md-2">Torre: </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="torre" id="torre" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('torre') 
+              && hasError('torre', 'required')">Torre is required</em>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="apto" class="col-form-label col-md-2">Apto del propietario: </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="apto" id="apto" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('apto') 
+              && hasError('apto', 'required')">Apto is required</em>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="estadoPago" class="col-form-label col-md-2">Estado del pago: </label>
+            <div class="custom-control custom-radio">
+                <input id="dia" type="radio" class="custom-control-input" value="dia" name="status">
+                <label class="custom-control-label" for="dia">Al día</label>
+             </div>
+             <div class="custom-control custom-radio">
+                <input id="pendiente" type="radio" class="custom-control-input" value="pendiente" checked name="status">
+                <label class="custom-control-label" for="pendiente">Pendiente</label>
+             </div>
+        </div>
+        <!-- <div class="mb-3 row">
+          <label for="dateOfBirth" class="col-form-label col-md-2">Date of birth: </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="dateOfBirth" id="dateOfBirth" 
+            class="form-control" readonly bsDatepicker/>
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('dateOfBirth') 
+            && hasError('dateOfBirth', 'required')">Date of birth is required</em>
+          </div>
+        </div> -->
+   
+        <br><br>
+   
+        <div class="mb-3 row">
+            <div class="offset-5 col-md-1">
+                <button type="submit" class="btn btn-info" [disabled]="!propiedadForm.valid">Save</button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-danger" (click)="redirectToPropiedadList()">Cancel</button>
+            </div>
+        </div>
+        
+      </div>
+    </form>
+  </div>
