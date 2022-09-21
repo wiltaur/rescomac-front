@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PropiedadesCreateComponent } from './components/propiedades/propiedades-create/propiedades-create.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,13 @@ import { PropiedadesCreateComponent } from './components/propiedades/propiedades
     VehiculosComponent,
     PropiedadesComponent,
     PageNotFoundComponent,
-    PropiedadesCreateComponent
+    PropiedadesCreateComponent,
+    PageLoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
+      {path: 'login', component:PageLoginComponent},
       {path: '', component:HomeComponent},
       {path: 'propiedades', component:PropiedadesComponent},
       {path: 'vehiculos', component:VehiculosComponent},
