@@ -62,7 +62,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
+            "configurations": {
             "production": {
               "browserTarget": "rescomac-front:build:production"
             },
