@@ -1,3 +1,50 @@
 <div class="container-fluid text-center">
-    <h1>Vista de propiedades</h1>
+    <div class="row">
+        <div class="offset-10 col-md-2 mt-2"> <a [routerLink]="['/propiedades/create']">Crear Propiedad</a> </div>
+    </div> <br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Identificacion</th>
+                    <th>Celular</th>
+                    <th>Correo</th>
+                    <th>Torre</th>
+                    <th>Apto</th>
+                    <th>Estado del Pago</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let propiedad of properties">
+                    <td>{{propiedad.nombre}}</td>
+                    <td>{{propiedad.apellido}}</td>
+                    <td>{{propiedad.identificacion}}</td>
+                    <td>{{propiedad.celular}}</td>
+                    <td>{{propiedad.correo}}</td>
+                    <td>{{propiedad.torre}}</td>
+                    <td>{{propiedad.apto}}</td>
+                    <td> 
+                        <p *ngIf="propiedad.estadoPago === true; then show; else notShow"></p>
+                        <ng-template #show>
+                              Al día
+                          </ng-template>
+                          
+                          <ng-template #notShow>
+                              Pendiente
+                          </ng-template>
+                    </td>
+                    <td><button type="button" id="update" class="btn btn-success">Actualizar</button></td>
+                    <td><button type="button" id="delete" class="btn btn-danger">Eliminar</button></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
 </div>
